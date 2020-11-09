@@ -1,0 +1,36 @@
+﻿<Window x:Class="ZespolGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZespolGUI"
+        mc:Ignorable="d"
+        Title="Zespół GUI" Height="303" Width="400">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="127*"/>
+            <ColumnDefinition Width="273*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.ColumnSpan="3">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_Plik">
+                    <MenuItem Header="_Otwórz"/>
+                    <MenuItem Header="_Zapisz" Click="MenuZapisz_Click"/>
+                    <MenuItem Header="_Wyjdź"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <Label Content="Nazwa" HorizontalAlignment="Center" Margin="0,26,0,0" VerticalAlignment="Top" Width="49"/>
+        <TextBox x:Name="tbNazwa" Grid.Column="1" HorizontalAlignment="Left" Margin="10,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133"/>
+        <Label Content="Keirownik zespołu" HorizontalAlignment="Center" Margin="0,57,0,0" VerticalAlignment="Top" Width="107"/>
+        <TextBox x:Name="tbKierownik" Grid.Column="1" HorizontalAlignment="Left" Margin="10,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244"/>
+        <Label Content="Lista członków" HorizontalAlignment="Center" Margin="0,126,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="lbCzlonkowie" Grid.Column="1" Margin="10,115,19,34"/>
+        <Button x:Name="btDodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="30,164,0,0" VerticalAlignment="Top" Width="58" Click="btDodaj_Click"/>
+        <Button x:Name="btUsun" Content="Usuń" HorizontalAlignment="Left" Margin="30,205,0,0" VerticalAlignment="Top" Width="58" Click="btUsun_Click"/>
+        <Button x:Name="btZmien" Content="Zmień" Grid.Column="1" HorizontalAlignment="Left" Margin="199,29,0,0" VerticalAlignment="Top" Width="55" Click="btZmien_Click"/>
+
+    </Grid>
+</Window>

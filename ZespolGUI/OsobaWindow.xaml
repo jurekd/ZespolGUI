@@ -1,0 +1,28 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZespolGUI"
+        xmlns:System="clr-namespace:System;assembly=System.Runtime" x:Class="ZespolGUI.OsobaWindow"
+        mc:Ignorable="d"
+        Title="Osoba Window" Height="348" Width="275">
+    <Grid Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}">
+        <Label Content="PESEL" HorizontalAlignment="Left" Margin="26,27,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbPESEL" HorizontalAlignment="Left" Margin="98,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Imię" HorizontalAlignment="Left" Margin="26,69,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbImie" HorizontalAlignment="Left" Margin="98,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Naziwsko" HorizontalAlignment="Left" Margin="26,112,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbNazwisko" HorizontalAlignment="Left" Margin="98,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Data urodz." HorizontalAlignment="Left" Margin="26,162,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbPlec" HorizontalAlignment="Left" Margin="98,214,0,0" VerticalAlignment="Top" Width="120">
+            <System:String>kobieta</System:String>
+            <System:String>mężczyzna</System:String>
+        </ComboBox>
+        <Label Content="Płeć" HorizontalAlignment="Left" Margin="30,210,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btZatwiedz" Content="Zatwierdź" HorizontalAlignment="Left" Margin="42,267,0,0" VerticalAlignment="Top" Width="83" Height="32" Click="btZatwiedz_Click"/>
+        <Button x:Name="btAnuluj" Content="Anuluj" HorizontalAlignment="Left" Margin="158,267,0,0" VerticalAlignment="Top" Height="32" Width="79" Click="btAnuluj_Click" IsCancel="True"/>
+        <DatePicker x:Name="dpDataUrodz" HorizontalAlignment="Left" Margin="102,166,0,0" VerticalAlignment="Top" Width="116"/>
+
+    </Grid>
+</Window>
