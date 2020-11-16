@@ -56,8 +56,16 @@ namespace Projekt
             //// Console.ReadLine();
             Zespół z2 = Zespół.OdczytajXML("zespol.xml");
             //Zespół.ZapiszJSON("zespol.json", z);
+            Console.WriteLine("Odczytane z XML");
             Console.WriteLine(z2);
             //Console.ReadLine();
+
+            //z2.ZapiszDoBazy();
+
+            Zespół z3 = Zespół.OdczytajZBazy();
+            Console.WriteLine("Odczytane z bazy");
+            Console.WriteLine(z3);
+            //Zespół.WypiszZespol();
         }
     }
 }

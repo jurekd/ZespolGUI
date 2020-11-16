@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
@@ -22,7 +23,10 @@ namespace Projekt
     {
         DateTime dataZapisu;
         string funkcja;
-
+        [Key]
+        public int czlonekZespoluId { get; set; }
+        public int zespolId { get; set; }
+        public virtual Zespół zespolBaza { get; set; }
         public DateTime DataZapisu { get => dataZapisu; set => dataZapisu = value; }
         [XmlElement("FukcjaWZepsole")]
         public string Funkcja { get => funkcja; set => funkcja = value; }

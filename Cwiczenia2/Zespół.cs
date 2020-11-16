@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Model;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -14,15 +17,17 @@ namespace Projekt
     [XmlRoot("ZespółProjektowy")]
     public class Zespół : ICloneable,IZapisywalna
     {
+        [Key]
+        public int zespolId { get; set; }
         string nazwa;
         KierownikZespołu kierownik;
         private List<CzłonekZespołu> członkowie;
         int liczbaCzłonków;
 
         public string Nazwa { get => nazwa; set => nazwa = value; }
-        public KierownikZespołu Kierownik { get => kierownik; set => kierownik = value; }
+        public virtual KierownikZespołu Kierownik { get => kierownik; set => kierownik = value; }
         public int LiczbaCzłonków { get => liczbaCzłonków; set => liczbaCzłonków = value; }
-        public List<CzłonekZespołu> Członkowie { get => członkowie; set => członkowie = value; }
+        public virtual List<CzłonekZespołu> Członkowie { get => członkowie; set => członkowie = value; }
 
         public Zespół()
         {
@@ -148,6 +153,39 @@ namespace Projekt
                 return serializer.Deserialize(reader) as Zespół;
             }
         }
+
+        public void ZapiszDoBazy()
+        {
+            using (var db = new MyContext())
+            {
+                db.zespolBaza.Add(this);
+                db.SaveChanges();
+            }
+        }
+
+        public static Zespół OdczytajZBazy()
+        {
+            Zespół z = null;
+            using (var db = new MyContext())
+            {
+                z = db.zespolBaza.Include(z => z.Kierownik).Include(z => z.Członkowie).FirstOrDefault();
+            }
+            return z;
+        }
+
+        public static void WypiszZespol()
+        {
+            using (var db = new MyContext())
+            {
+                List<Zespół> query = db.zespolBaza.Include(z => z.Kierownik).Include(z=>z.Członkowie).ToList<Zespół>();
+
+                foreach (Zespół item in query)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+        }
+
 
     }
 }

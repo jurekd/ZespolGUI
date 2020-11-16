@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,8 @@ namespace Projekt
     [Serializable]
     public class KierownikZespołu : Osoba, ICloneable
     {
+        [Key]
+        public int kierownikZespoluId { get; set; }
         int doswiadczenie;
         //public int[] tab = { 1, 2, 3 };
 
