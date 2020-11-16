@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Cwiczenia2\Model.csproj", "{6322E8D4-5763-416D-9073-503718AD5800}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZespolGUI", "ZespolGUI\ZespolGUI.csproj", "{52C0852B-2BA2-4B52-AC4D-545529246EA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZespolGUI", "ZespolGUI\ZespolGUI.csproj", "{52C0852B-2BA2-4B52-AC4D-545529246EA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{545C3683-5AA3-485D-A356-B039B7B99C49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{52C0852B-2BA2-4B52-AC4D-545529246EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52C0852B-2BA2-4B52-AC4D-545529246EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52C0852B-2BA2-4B52-AC4D-545529246EA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{545C3683-5AA3-485D-A356-B039B7B99C49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{545C3683-5AA3-485D-A356-B039B7B99C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{545C3683-5AA3-485D-A356-B039B7B99C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{545C3683-5AA3-485D-A356-B039B7B99C49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,6 +13,9 @@ using System.Xml.Serialization;
 
 namespace Projekt
 {
+    /// <summary>
+    /// Klasa Zespół opisuje zespół projektowy.
+    /// </summary>
     [Serializable]
     [XmlRoot("ZespółProjektowy")]
     public class Zespół : ICloneable,IZapisywalna
@@ -41,7 +44,12 @@ namespace Projekt
             this.nazwa = nazwa;
             this.kierownik = kierownik;
         }
-
+        /// <summary>
+        /// Dodaje członka do zespołu.
+        /// </summary>
+        /// <param name="członek">
+        /// obiekt CzłonekZespołu
+        /// </param>
         public void DodajCzłonka(CzłonekZespołu członek)
         {
             this.Członkowie.Add(członek);

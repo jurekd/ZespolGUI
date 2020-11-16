@@ -42,6 +42,8 @@ namespace Projekt
                 Regex wzorzec = new Regex("^\\d{11}$");
                 if (wzorzec.IsMatch(value))
                     PESEL = value;
+                else
+                    throw new FormatException();
             }
         }
         public Płcie Pleć { get => pleć; set => pleć = value; }
